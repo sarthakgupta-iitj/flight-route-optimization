@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flight Route Optimizer</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Flight Route Optimizer</h1>
+            <p>Find the optimal flight path between Indian cities</p>
+        </header>
+
+        <div class="form-container">
+            <form id="route-form">
+                <div class="form-group">
+                    <label for="source">Source City:</label>
+                    <select id="source" name="source" required>
+                        <option value="">Select a city</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="destination">Destination City:</label>
+                    <select id="destination" name="destination" required>
+                        <option value="">Select a city</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Optimization Type:</label>
+                    <div class="radio-group">
+                        <label>
+                            <input type="radio" name="type" value="distance" checked>
+                            Shortest Distance
+                        </label>
+                        <label>
+                            <input type="radio" name="type" value="fare">
+                            Lowest Fare
+                        </label>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn">Find Route</button>
+            </form>
+        </div>
+
+        <div class="results-container" id="results">
+            <div id="map"></div>
+            
+            <div class="route-details">
+                <h2>Route Details</h2>
+                <div id="path-details">
+                    <p>Select source and destination to see route details</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script src="js/main.js"></script>
+    <script src="js/visualization.js"></script>
+</body>
+</html>
